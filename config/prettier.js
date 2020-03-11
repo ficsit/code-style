@@ -1,3 +1,6 @@
+const prettier = require('prettier');
+const extensions = prettier.getSupportInfo().languages.flatMap(l => l.extensions);
+
 // https://prettier.io/docs/en/options.html
 const prettierConfig = {
   // We expand beyond the default 80, as TypeScript code can be pretty hard to
@@ -36,24 +39,26 @@ const prettierConfig = {
 module.exports = {
   plugins: ['prettier'],
 
-  // https://github.com/prettier/eslint-plugin-prettier#options
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        ...prettierConfig,
-        // By default, the prettier plugin assumes all non-TS/JS files are
-        // formats where TS/JS can be embedded (e.g. html), and only formats the
-        // embedded content. We need to disable that so that we can handle all
-        // file formats and all content.
-        //
-        // https://github.com/prettier/eslint-plugin-prettier/blob/master/eslint-plugin-prettier.js#L189-L219
-        parser: null,
-      },
-    ],
-  },
-
   overrides: [
+    {
+      files: extensions.map(e => `**${e}`),
+      rules: {
+        'prettier/prettier': [
+          'error',
+          {
+            ...prettierConfig,
+            // By default, the prettier plugin assumes all non-TS/JS files are
+            // formats where TS/JS can be embedded (e.g. html), and only formats the
+            // embedded content. We need to disable that so that we can handle all
+            // file formats and all content.
+            //
+            // https://github.com/prettier/eslint-plugin-prettier/blob/master/eslint-plugin-prettier.js#L189-L219
+            parser: null,
+          },
+        ],
+      },
+    },
+
     // Use the plugin's default parser for TS/JS files.
     {
       files: ['**.{js,jsx,ts,tsx}'],
@@ -62,17 +67,9 @@ module.exports = {
       },
     },
 
-    // Prettier can't handle arbitrary text without a filename.
+    // Don't format licenses. They're sacred!
     {
-      files: '<text>',
-      rules: {
-        'prettier/prettier': 'off',
-      },
-    },
-
-    // Ditto various other misc files.
-    {
-      files: ['*LICENSE*', '**.*ignore', '**.lock', '**.env*', '**.*rc'],
+      files: ['*LICENSE*'],
       rules: {
         'prettier/prettier': 'off',
       },
