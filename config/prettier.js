@@ -77,7 +77,7 @@ module.exports = {
 
     // Ditto various other misc files.
     {
-      files: ['*LICENSE*', '**.*ignore', '**.lock'],
+      files: ['*LICENSE*', '**.*ignore', '**.lock', '**.env*', '**.*rc'],
       rules: {
         'prettier/prettier': 'off',
       },
