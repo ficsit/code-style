@@ -5,4 +5,12 @@ module.exports = {
   ignorePatterns: ['LICENSE.*', '/node_modules/*', '!.*'],
 
   extends: ['./prettier'],
+
+  overrides: [
+    // TypeScript + JavaScript files.
+    {
+      files: '**.{js,jsx,ts,tsx}',
+      extends: ['./core'],
+    },
+  ],
 };
