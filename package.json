@@ -4,5 +4,14 @@
   "description": "FicsIt's official code style enforcer.",
   "repository": "https://github.com/ficsit/code-style",
   "author": "FicsIt Employees",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@ficsit/eslint-config-code-style": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  },
+  "devDependencies": {
+    "@ficsit/code-style": "link:.",
+    "eslint": "^6.8.0"
+  }
 }
