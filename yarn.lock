@@ -96,10 +96,10 @@
   version "0.0.0"
   uid ""
 
-"@ficsit/eslint-config-code-style@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@ficsit/eslint-config-code-style/-/eslint-config-code-style-1.0.1.tgz#c8749c258f1704d0b49d70d47056410a0f35ebf5"
-  integrity sha512-Tv+pBjaPrU/PGNIZ8dZvLqOcT4zC3WL7u/nG3CXIaZuAKOzYv3EiAxTfLWjebNZhyynbL8mg6fhQe0EV2acONg==
+"@ficsit/eslint-config-code-style@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@ficsit/eslint-config-code-style/-/eslint-config-code-style-1.0.2.tgz#0d3ef7281257d0a529fd4d859e6699e3f9f7202d"
+  integrity sha512-tEBXMyGOelCezloIahAjHXacey687oReG6UgJp5yCoYEbt7TloGxyrGvBd/LZfYkRTNyY2n67FjNkfoSekTSsw==
 
 "@lerna/add@3.20.0":
   version "3.20.0"
