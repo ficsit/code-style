@@ -74,5 +74,13 @@ module.exports = {
         'prettier/prettier': 'off',
       },
     },
+
+    // Ditto various other misc files.
+    {
+      files: ['*LICENSE*', '**.*ignore', '**.lock'],
+      rules: {
+        'prettier/prettier': 'off',
+      },
+    },
   ],
 };
