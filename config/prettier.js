@@ -1,9 +1,3 @@
-/**
- * @file configuration for the Prettier ESLint plugin.
- *
- * @see https://github.com/prettier/eslint-plugin-prettier
- */
-
 // https://prettier.io/docs/en/options.html
 const prettierConfig = {
   // We expand beyond the default 80, as TypeScript code can be pretty hard to
@@ -38,6 +32,7 @@ const prettierConfig = {
   endOfLine: 'lf',
 };
 
+// https://github.com/prettier/eslint-plugin-prettier
 module.exports = {
   plugins: ['prettier'],
 

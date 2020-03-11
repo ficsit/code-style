@@ -4,6 +4,10 @@ module.exports = {
   // By default, ESLint ignores all dotfiles and directories.
   ignorePatterns: ['/node_modules/*', '!.*'],
 
+  env: {
+    node: true,
+  },
+
   extends: ['./prettier'],
 
   overrides: [
@@ -11,6 +15,11 @@ module.exports = {
     {
       files: '**.{js,jsx,ts,tsx}',
       extends: ['./core'],
+    },
+    // Just TypeScript files.
+    {
+      files: '**.{ts,tsx}',
+      extends: ['./typescript'],
     },
   ],
 };
