@@ -1,6 +1,6 @@
 {
   "name": "@ficsit/eslint-config-code-style",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Shared ESLint config that points to the latest @ficsit/code-style",
   "repository": "https://github.com/ficsit/code-style",
   "license": "Apache-2.0",
