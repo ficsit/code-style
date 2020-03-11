@@ -9,8 +9,8 @@
     "access": "public"
   },
   "scripts": {
-    "fix-style": "git ls-tree --name-only HEAD | xargs eslint --no-error-on-unmatched-pattern --fix",
-    "test-style": "git ls-tree --name-only HEAD | xargs eslint --no-error-on-unmatched-pattern",
+    "fix-style": "git ls-tree -r --name-only HEAD | xargs eslint --no-error-on-unmatched-pattern --fix",
+    "test-style": "git ls-tree -r --name-only HEAD | xargs eslint --no-error-on-unmatched-pattern",
     "release": "lerna publish patch --yes"
   },
   "dependencies": {
