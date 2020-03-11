@@ -1,0 +1,8 @@
+{
+  "name": "@ficsit/code-style",
+  "version": "1.0.0",
+  "description": "FicsIt's official code style enforcer.",
+  "repository": "https://github.com/ficsit/code-style",
+  "author": "FicsIt Employees",
+  "license": "Apache-2.0"
+}
