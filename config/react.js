@@ -2,4 +2,9 @@
 module.exports = {
   plugins: ['react'],
   extends: ['plugin:react/recommended'],
+  // setings: {
+  //   react: {
+  //     version: 'detect',
+  //   },
+  // },
 };
