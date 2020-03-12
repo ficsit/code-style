@@ -14,7 +14,7 @@ module.exports = {
     // TypeScript + JavaScript files.
     {
       files: '**.{js,jsx,ts,tsx}',
-      extends: ['./core', './typescript'],
+      extends: ['./core', './import', './react', './typescript'],
     },
   ],
 };
