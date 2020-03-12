@@ -1,4 +1,14 @@
 // https://eslint.org/docs/rules/
 module.exports = {
-  extends: ['eslint:recommended'],
+  overrides: [
+    {
+      files: ['**.{js,jsx,ts,tsx}'],
+
+      env: {
+        node: true,
+      },
+
+      extends: ['eslint:recommended'],
+    },
+  ],
 };

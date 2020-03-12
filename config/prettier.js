@@ -37,11 +37,12 @@ const prettierConfig = {
 
 // https://github.com/prettier/eslint-plugin-prettier
 module.exports = {
-  plugins: ['prettier'],
-
   overrides: [
     {
       files: extensions.map(e => `**${e}`),
+
+      plugins: ['prettier'],
+
       rules: {
         'prettier/prettier': [
           'error',
