@@ -29,6 +29,8 @@ module.exports = {
             'alphabetize': { order: 'asc' },
           },
         ],
+
+        'import/export': 'off',
       },
     },
   ],
