@@ -1,6 +1,6 @@
 {
   "name": "@ficsit/code-style",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "FicsIt's official code style enforcer.",
   "repository": "https://github.com/ficsit/code-style",
   "author": "FicsIt Employees",
