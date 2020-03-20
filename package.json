@@ -1,6 +1,6 @@
 {
   "name": "@ficsit/code-style",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "description": "FicsIt's official code style enforcer.",
   "repository": "https://github.com/ficsit/code-style",
   "author": "FicsIt Employees",
@@ -12,7 +12,7 @@
     "access": "public"
   },
   "bin": {
-    "code-style": "./bin/code-style"
+    "code-style": "./bin/code-style.js"
   },
   "scripts": {
     "fix-style": "node ./bin/code-style fix",
