@@ -5,11 +5,18 @@
   "repository": "https://github.com/ficsit/code-style",
   "author": "FicsIt Employees",
   "license": "Apache-2.0",
+  "files": [
+    "{bin,config}/**/*.js"
+  ],
   "publishConfig": {
     "access": "public"
   },
+  "bin": {
+    "code-style": "./bin/code-style"
+  },
   "scripts": {
     "fix-style": "git ls-tree -r --name-only HEAD | xargs eslint --no-error-on-unmatched-pattern --fix",
+    "prepare": "tsc",
     "test-style": "git ls-tree -r --name-only HEAD | xargs eslint --no-error-on-unmatched-pattern",
     "release": "lerna publish patch --yes"
   },
@@ -21,10 +28,14 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
+    "glob": "^7.1.6",
+    "ignore": "^5.1.4",
     "prettier": "^1.19.1"
   },
   "devDependencies": {
     "@ficsit/code-style": "link:.",
+    "@types/eslint": "^6.1.8",
+    "@types/node": "^13.9.2",
     "eslint": "^6.8.0",
     "lerna": "^3.20.2",
     "typescript": "^3.8.3"
