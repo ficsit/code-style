@@ -99,7 +99,9 @@ async function filesToProcess(ignores: Ignore, ...expressions: string[]) {
   const statCache = Object.create(null);
   const filter = ignores.createFilter();
 
-  for (const expression of expressions) {
+  for (let expression of expressions) {
+    if (isDirectory(expression)) expression = `${expression}/**`;
+
     for (const file of await glob(expression, { statCache, nodir: true, dot: true })) {
       if (!filter(file)) continue;
       files.add(file);
@@ -114,5 +116,13 @@ async function readGitignore(projectRoot: string) {
     return await readFile(path.join(projectRoot, '.gitignore'), 'utf-8');
   } catch {
     return 'node_modules/';
+  }
+}
+
+function isDirectory(expression: string) {
+  try {
+    return fs.statSync(expression).isDirectory();
+  } catch {
+    return false;
   }
 }
