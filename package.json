@@ -15,9 +15,9 @@
     "code-style": "./bin/code-style"
   },
   "scripts": {
-    "fix-style": "git ls-tree -r --name-only HEAD | xargs eslint --no-error-on-unmatched-pattern --fix",
+    "fix-style": "node ./bin/code-style fix",
     "prepare": "tsc",
-    "test-style": "git ls-tree -r --name-only HEAD | xargs eslint --no-error-on-unmatched-pattern",
+    "test-style": "node ./bin/code-style test",
     "release": "lerna publish patch --yes"
   },
   "dependencies": {

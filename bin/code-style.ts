@@ -59,15 +59,15 @@ async function runEslint(fix: boolean, files: string[]) {
     const fileSuccess = !fileReport.errorCount && !fileReport.warningCount;
     success = success && fileSuccess;
 
+    results.push(...fileReport.results);
     if (!fileSuccess) {
       process.stderr.write(`\r\u001b[K✗ ${file}\n`);
-      results.push(...fileReport.results);
     }
 
     // We pause here for two reasons:
     // - Give any background processing time to catch up
     // - Give node a place where it can handle a signal (such as SIGINT).
-    await new Promise(r => setTimeout(r, 100));
+    await new Promise(r => setTimeout(r, 0));
   }
 
   if (success) {
@@ -75,6 +75,10 @@ async function runEslint(fix: boolean, files: string[]) {
   } else {
     process.stderr.write(`\r\u001b[K`);
     process.stderr.write(formatter(results));
+  }
+
+  if (process.env.REPORT === 'json') {
+    process.stdout.write(JSON.stringify(results, null, 2));
   }
 
   return success;
